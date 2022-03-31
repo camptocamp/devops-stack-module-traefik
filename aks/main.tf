@@ -15,6 +15,14 @@ resource "azurerm_dns_cname_record" "wildcard" {
   record              = "${local.azure_dns_label_name}.${data.azurerm_resource_group.this.location}.cloudapp.azure.com."
 }
 
+resource "azurerm_dns_cname_record" "wildcard_no_cluster_name" {
+  name                = "*.apps"
+  zone_name           = data.azurerm_dns_zone.this.name
+  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
+  ttl                 = 300
+  record              = "${local.azure_dns_label_name}.${data.azurerm_resource_group.this.location}.cloudapp.azure.com."
+}
+
 module "traefik" {
   source = "../"
 
