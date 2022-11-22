@@ -304,12 +304,14 @@
           {{- if .Values.experimental.http3.enabled }}
           - "--experimental.http3=true"
           {{- end }}
-          {{- if and .Values.rbac.enabled .Values.rbac.namespaced }}
-          {{- if .Values.providers.kubernetesCRD.enabled }}
-          - "--providers.kubernetescrd.namespaces={{ template "providers.kubernetesCRD.namespaces" . }}"
+          {{- with .Values.providers.kubernetesCRD }}
+          {{- if (and .enabled (or .namespaces (and $.Values.rbac.enabled $.Values.rbac.namespaced))) }}
+          - "--providers.kubernetescrd.namespaces={{ template "providers.kubernetesCRD.namespaces" $ }}"
           {{- end }}
-          {{- if .Values.providers.kubernetesIngress.enabled }}
-          - "--providers.kubernetesingress.namespaces={{ template "providers.kubernetesIngress.namespaces" . }}"
+          {{- end }}
+          {{- with .Values.providers.kubernetesIngress }}
+          {{- if (and .enabled (or .namespaces (and $.Values.rbac.enabled $.Values.rbac.namespaced))) }}
+          - "--providers.kubernetesingress.namespaces={{ template "providers.kubernetesIngress.namespaces" $ }}"
           {{- end }}
           {{- end }}
           {{- range $entrypoint, $config := $.Values.ports }}
@@ -345,6 +347,22 @@
           - "--entrypoints.{{ $entrypoint }}.http3.advertisedPort={{ default $config.port $config.exposedPort }}"
           {{- else }}
           - "--entrypoints.{{ $entrypoint }}.enableHTTP3=true"
+          {{- end }}
+          {{- end }}
+          {{- if $config.forwardedHeaders }}
+          {{- if $config.forwardedHeaders.trustedIPs }}
+          - "--entrypoints.{{ $entrypoint }}.forwardedHeaders.trustedIPs={{ join "," $config.forwardedHeaders.trustedIPs }}"
+          {{- end }}
+          {{- if $config.forwardedHeaders.insecure }}
+          - "--entrypoints.{{ $entrypoint }}.forwardedHeaders.insecure"
+          {{- end }}
+          {{- end }}
+          {{- if $config.proxyProtocol }}
+          {{- if $config.proxyProtocol.trustedIPs }}
+          - "--entrypoints.{{ $entrypoint }}.proxyProtocol.trustedIPs={{ join "," $config.proxyProtocol.trustedIPs }}"
+          {{- end }}
+          {{- if $config.proxyProtocol.insecure }}
+          - "--entrypoints.{{ $entrypoint }}.proxyProtocol.insecure"
           {{- end }}
           {{- end }}
           {{- end }}
@@ -385,12 +403,6 @@
           - "--accesslog.fields.headers.names.{{ $fieldname }}={{ $fieldaction }}"
           {{- end }}
           {{- end }}
-          {{- end }}
-          {{- if .Values.pilot.enabled }}
-          - "--pilot.token={{ .Values.pilot.token }}"
-          {{- end }}
-          {{- if hasKey .Values.pilot "dashboard" }}
-          - "--pilot.dashboard={{ .Values.pilot.dashboard }}"
           {{- end }}
           {{- range $resolver, $config := $.Values.certResolvers }}
           {{- range $option, $setting := $config }}
@@ -465,5 +477,12 @@
       {{- with .Values.podSecurityContext }}
       securityContext:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.topologySpreadConstraints }}
+      {{- if (semverCompare "<1.19.0" .Capabilities.KubeVersion.Version) }}
+        {{- fail "ERROR: topologySpreadConstraints are supported only on kubernetes >= v1.19" -}}
+      {{- end }}
+      topologySpreadConstraints:
+        {{- tpl (toYaml .Values.topologySpreadConstraints) . | nindent 8 }}
       {{- end }}
 {{ end -}}

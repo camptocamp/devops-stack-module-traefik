@@ -1,12 +1,330 @@
 # Change Log
 
-## 15.0.0 
+## 16.2.0 
+
+**Release date:** 2022-10-20
 
 ![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
 ![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
 
 
-* Enable TLS by default on `websecure` (#560)
+* Add forwardedHeaders and proxyProtocol config 
+
+### Default value changes
+
+```diff
+diff --git a/traefik/values.yaml b/traefik/values.yaml
+index 9b5afc4..6a90bc6 100644
+--- a/traefik/values.yaml
++++ b/traefik/values.yaml
+@@ -403,6 +403,16 @@ ports:
+     # Added in 2.2, you can make permanent redirects via entrypoints.
+     # https://docs.traefik.io/routing/entrypoints/#redirection
+     # redirectTo: websecure
++    #
++    # Trust forwarded  headers information (X-Forwarded-*).
++    # forwardedHeaders:
++    #   trustedIPs: []
++    #   insecure: false
++    #
++    # Enable the Proxy Protocol header parsing for the entry point
++    # proxyProtocol:
++    #   trustedIPs: []
++    #   insecure: false
+   websecure:
+     port: 8443
+     # hostPort: 8443
+@@ -428,6 +438,16 @@ ports:
+       #     - foo.example.com
+       #     - bar.example.com
+     #
++    # Trust forwarded  headers information (X-Forwarded-*).
++    # forwardedHeaders:
++    #   trustedIPs: []
++    #   insecure: false
++    #
++    # Enable the Proxy Protocol header parsing for the entry point
++    # proxyProtocol:
++    #   trustedIPs: []
++    #   insecure: false
++    #
+     # One can apply Middlewares on an entrypoint
+     # https://doc.traefik.io/traefik/middlewares/overview/
+     # https://doc.traefik.io/traefik/routing/entrypoints/#middlewares
+```
+
+## 16.1.0 
+
+**Release date:** 2022-10-19
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* ✨ add optional ServiceMonitor & PrometheusRules CRDs (#425) 
+
+### Default value changes
+
+```diff
+diff --git a/traefik/values.yaml b/traefik/values.yaml
+index 7e335b5..9b5afc4 100644
+--- a/traefik/values.yaml
++++ b/traefik/values.yaml
+@@ -237,8 +237,46 @@ metrics:
+   prometheus:
+     entryPoint: metrics
+   #  addRoutersLabels: true
+-  # statsd:
+-  #   address: localhost:8125
++  #  statsd:
++  #    address: localhost:8125
++##
++##  enable optional CRDs for Prometheus Operator
++##
++  #  serviceMonitor:
++  #    additionalLabels:
++  #      foo: bar
++  #    namespace: "another-namespace"
++  #    namespaceSelector: {}
++  #    metricRelabelings: []
++  #      - sourceLabels: [__name__]
++  #        separator: ;
++  #        regex: ^fluentd_output_status_buffer_(oldest|newest)_.+
++  #        replacement: $1
++  #        action: drop
++  #    relabelings: []
++  #      - sourceLabels: [__meta_kubernetes_pod_node_name]
++  #        separator: ;
++  #        regex: ^(.*)$
++  #        targetLabel: nodename
++  #        replacement: $1
++  #        action: replace
++  #    jobLabel: traefik
++  #    scrapeInterval: 30s
++  #    scrapeTimeout: 5s
++  #    honorLabels: true
++  #  prometheusRule:
++  #    additionalLabels: {}
++  #    namespace: "another-namespace"
++  #    rules:
++  #      - alert: TraefikDown
++  #        expr: up{job="traefik"} == 0
++  #        for: 5m
++  #        labels:
++  #          context: traefik
++  #          severity: warning
++  #        annotations:
++  #          summary: "Traefik Down"
++  #          description: "{{ $labels.pod }} on {{ $labels.nodename }} is down"
+ 
+ tracing: {}
+   # instana:
+```
+
+## 16.0.0 
+
+**Release date:** 2022-10-19
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* :fire: Remove `Pilot` and `fallbackApiVersion` (#665) 
+
+### Default value changes
+
+```diff
+diff --git a/traefik/values.yaml b/traefik/values.yaml
+index 03fdaed..7e335b5 100644
+--- a/traefik/values.yaml
++++ b/traefik/values.yaml
+@@ -84,15 +84,6 @@ ingressClass:
+   # true is not unit-testable yet, pending https://github.com/rancher/helm-unittest/pull/12
+   enabled: false
+   isDefaultClass: false
+-  # Use to force a networking.k8s.io API Version for certain CI/CD applications. E.g. "v1beta1"
+-  fallbackApiVersion: ""
+-
+-# Activate Pilot integration
+-pilot:
+-  enabled: false
+-  token: ""
+-  # Toggle Pilot Dashboard
+-  # dashboard: false
+ 
+ # Enable experimental features
+ experimental:
+```
+
+## 15.3.1 
+
+**Release date:** 2022-10-18
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* :art: Improve `IngressRoute` structure (#674) 
+
+### Default value changes
+
+```diff
+# No changes in this release
+```
+
+## 15.3.0 
+
+**Release date:** 2022-10-18
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* 📌 Add capacity to enable User-facing role 
+
+### Default value changes
+
+```diff
+diff --git a/traefik/values.yaml b/traefik/values.yaml
+index 76aac93..03fdaed 100644
+--- a/traefik/values.yaml
++++ b/traefik/values.yaml
+@@ -553,10 +553,12 @@ hostNetwork: false
+ # Whether Role Based Access Control objects like roles and rolebindings should be created
+ rbac:
+   enabled: true
+-
+   # If set to false, installs ClusterRole and ClusterRoleBinding so Traefik can be used across namespaces.
+   # If set to true, installs Role and RoleBinding. Providers will only watch target namespace.
+   namespaced: false
++  # Enable user-facing roles
++  # https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
++  # aggregateTo: [ "admin" ]
+ 
+ # Enable to create a PodSecurityPolicy and assign it to the Service Account via RoleBinding or ClusterRoleBinding
+ podSecurityPolicy:
+```
+
+## 15.2.2 
+
+**Release date:** 2022-10-17
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* Fix provider namespace changes 
+
+### Default value changes
+
+```diff
+# No changes in this release
+```
+
+## 15.2.1 
+
+**Release date:** 2022-10-17
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* 🐛 fix provider namespace changes 
+
+### Default value changes
+
+```diff
+# No changes in this release
+```
+
+## 15.2.0 
+
+**Release date:** 2022-10-17
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* :bug: Allow to watch on specific namespaces without using rbac.namespaced (#666) 
+
+### Default value changes
+
+```diff
+diff --git a/traefik/values.yaml b/traefik/values.yaml
+index 781ac15..76aac93 100644
+--- a/traefik/values.yaml
++++ b/traefik/values.yaml
+@@ -555,7 +555,7 @@ rbac:
+   enabled: true
+ 
+   # If set to false, installs ClusterRole and ClusterRoleBinding so Traefik can be used across namespaces.
+-  # If set to true, installs namespace-specific Role and RoleBinding and requires provider configuration be set to that same namespace
++  # If set to true, installs Role and RoleBinding. Providers will only watch target namespace.
+   namespaced: false
+ 
+ # Enable to create a PodSecurityPolicy and assign it to the Service Account via RoleBinding or ClusterRoleBinding
+```
+
+## 15.1.1 
+
+**Release date:** 2022-10-17
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* :goal_net: Fail gracefully when http3 is not enabled correctly (#667) 
+
+### Default value changes
+
+```diff
+# No changes in this release
+```
+
+## 15.1.0 
+
+**Release date:** 2022-10-14
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* :sparkles: add optional topologySpreadConstraints (#663) 
+
+### Default value changes
+
+```diff
+diff --git a/traefik/values.yaml b/traefik/values.yaml
+index fc2c371..781ac15 100644
+--- a/traefik/values.yaml
++++ b/traefik/values.yaml
+@@ -593,6 +593,15 @@ affinity: {}
+ 
+ nodeSelector: {}
+ tolerations: []
++topologySpreadConstraints: []
++# # This example topologySpreadConstraints forces the scheduler to put traefik pods
++# # on nodes where no other traefik pods are scheduled.
++#  - labelSelector:
++#      matchLabels:
++#        app: '{{ template "traefik.name" . }}'
++#    maxSkew: 1
++#    topologyKey: kubernetes.io/hostname
++#    whenUnsatisfiable: DoNotSchedule
+ 
+ # Pods can have priority.
+ # Priority indicates the importance of a Pod relative to other Pods.
+```
+
+## 15.0.0 
+
+**Release date:** 2022-10-13
+
+![AppVersion: 2.9.1](https://img.shields.io/static/v1?label=AppVersion&message=2.9.1&color=success&logo=)
+![Helm: v3](https://img.shields.io/static/v1?label=Helm&message=v3&color=informational&logo=helm)
+
+
+* :rocket: Enable TLS by default on `websecure` port (#657) 
 
 ### Default value changes
 
