@@ -4,7 +4,7 @@ data "azurerm_dns_zone" "this" {
 }
 
 data "azurerm_resource_group" "nodes_resource_group" {
-  name = var.nodes_resource_group_name
+  name = var.node_resource_group_name
 }
 
 # TODO should we move this out of here?
