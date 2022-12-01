@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.1-alpha.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.1...v1.0.1-alpha.1) (2022-12-01)
+
+
+### Bug Fixes
+
+* **aks:** homogenize rg naming convention between modules ([bba2613](https://github.com/camptocamp/devops-stack-module-traefik/commit/bba261369503559727b492fdd0bbaf758f5111f2))
+* **aks:** typo ([e6778be](https://github.com/camptocamp/devops-stack-module-traefik/commit/e6778be72ba8ee19837ce707b396cfc0a4fda726))
+* separate DNS zone and cluster resource groups ([95c9633](https://github.com/camptocamp/devops-stack-module-traefik/commit/95c96336736c1d5de579db4c0dd8e6d4b828b466))
+
 ## 1.0.0-alpha.1 (2022-11-18)
 
 
