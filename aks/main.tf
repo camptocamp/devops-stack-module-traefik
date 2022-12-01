@@ -3,8 +3,8 @@ data "azurerm_dns_zone" "this" {
   resource_group_name = var.dns_zone_resource_group_name
 }
 
-data "azurerm_resource_group" "cluster_resource_group" {
-  name = var.cluster_resource_group_name
+data "azurerm_resource_group" "nodes_resource_group" {
+  name = var.nodes_resource_group_name
 }
 
 # TODO should we move this out of here?
@@ -13,7 +13,7 @@ resource "azurerm_dns_cname_record" "wildcard" {
   zone_name           = data.azurerm_dns_zone.this.name
   resource_group_name = data.azurerm_dns_zone.this.resource_group_name
   ttl                 = 300
-  record              = "${local.azure_dns_label_name}.${data.azurerm_resource_group.cluster_resource_group.location}.cloudapp.azure.com."
+  record              = "${local.azure_dns_label_name}.${data.azurerm_resource_group.nodes_resource_group.location}.cloudapp.azure.com."
 }
 
 module "traefik" {
