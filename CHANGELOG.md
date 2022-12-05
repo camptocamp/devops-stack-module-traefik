@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-05)
+
+
+### Features
+
+* **chart:** bump Chart version to support proxy-protocol ([#16](https://github.com/camptocamp/devops-stack-module-traefik/issues/16)) ([0530512](https://github.com/camptocamp/devops-stack-module-traefik/commit/053051267ad0f52335a77b34a3134d6e9306c41c))
+
 ## [1.0.0-alpha.2](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-12-01)
 
 
