@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.4](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-12-06)
+
+
+### Bug Fixes
+
+* **chart:** fix last PR ([#22](https://github.com/camptocamp/devops-stack-module-traefik/issues/22)) ([a93184f](https://github.com/camptocamp/devops-stack-module-traefik/commit/a93184fbc5d0bf026a6210805c1fd887db372528))
+
 ## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-05)
 
 
