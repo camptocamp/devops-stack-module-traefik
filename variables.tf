@@ -37,8 +37,8 @@ variable "dependency_ids" {
   default = {}
 }
 
-variable"app_autosync" {
-  type = bool
+variable "app_autosync" {
+  type    = bool
   default = true
 }
 
