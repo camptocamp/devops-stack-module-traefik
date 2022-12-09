@@ -22,4 +22,7 @@ locals {
       }
     }
   }]
+
+  autosync = var.app_autosync ? { "allow_empty" = false, "prune" = true, "self_heal" = true } : {}
+
 }
