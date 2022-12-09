@@ -38,8 +38,17 @@ variable "dependency_ids" {
 }
 
 variable "app_autosync" {
-  type    = bool
-  default = true
+  description = "Autosync option configuration for argocd application"
+  type = object({
+    allow_empty = optional(bool)
+    prune       = optional(bool)
+    self_heal   = optional(bool)
+  })  
+  default = { 
+    allow_empty = false
+    prune       = true
+    self_heal   = true
+  }
 }
 
 #######################

@@ -61,7 +61,7 @@ resource "argocd_application" "this" {
     }
 
     sync_policy {
-      automated = local.autosync
+      automated = var.app_autosync
 
       retry {
         backoff = {
