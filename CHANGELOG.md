@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.5](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-12-09)
+
+
+### Features
+
+* **main:** introduce a variable to set autosync ([#25](https://github.com/camptocamp/devops-stack-module-traefik/issues/25)) ([b418a72](https://github.com/camptocamp/devops-stack-module-traefik/commit/b418a72e3125843eb0368fd300857a3ba72949f7))
+
 ## [1.0.0-alpha.4](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-12-06)
 
 
