@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.6](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-12-14)
+
+
+### Bug Fixes
+
+* **main:** enrich autosync var and default to true ([#28](https://github.com/camptocamp/devops-stack-module-traefik/issues/28)) ([5b5b169](https://github.com/camptocamp/devops-stack-module-traefik/commit/5b5b1690c17d8a8bda7179ddb9de93c21e6fe10b))
+
 ## [1.0.0-alpha.5](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-12-09)
 
 
