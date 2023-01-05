@@ -13,3 +13,14 @@ module "traefik" {
 
   dependency_ids = var.dependency_ids
 }
+
+data "kubernetes_service" "traefik" {
+  metadata {
+    name      = local.helm_values.0.traefik.fullnameOverride
+    namespace = var.namespace
+  }
+
+  depends_on = [
+    module.traefik
+  ]
+}
