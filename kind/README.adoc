@@ -5,7 +5,9 @@ No requirements.
 
 === Providers
 
-No providers.
+The following providers are used by this module:
+
+- [[provider_kubernetes]] <<provider_kubernetes,kubernetes>>
 
 === Modules
 
@@ -13,13 +15,15 @@ The following Modules are called:
 
 ==== [[module_traefik]] <<module_traefik,traefik>>
 
-Source: ../nodeport/
+Source: ../
 
 Version:
 
 === Resources
 
-No resources.
+The following resources are used by this module:
+
+- https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/service[kubernetes_service.traefik] (data source)
 
 === Required Inputs
 
@@ -107,6 +111,10 @@ Default: `"v1.0.0-alpha.6"`
 
 The following outputs are exported:
 
+==== [[output_external_ip]] <<output_external_ip,external_ip>>
+
+Description: External IP address of Traefik LB service.
+
 ==== [[output_id]] <<output_id,id>>
 
 Description: n/a
@@ -114,12 +122,28 @@ Description: n/a
 // BEGIN_TF_TABLES
 
 
+= Providers
+
+[cols="a,a",options="header,autowidth"]
+|===
+|Name |Version
+|[[provider_kubernetes]] <<provider_kubernetes,kubernetes>> |n/a
+|===
+
 = Modules
 
 [cols="a,a,a",options="header,autowidth"]
 |===
 |Name |Source |Version
-|[[module_traefik]] <<module_traefik,traefik>> |../nodeport/ |
+|[[module_traefik]] <<module_traefik,traefik>> |../ |
+|===
+
+= Resources
+
+[cols="a,a",options="header,autowidth"]
+|===
+|Name |Type
+|https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/service[kubernetes_service.traefik] |data source
 |===
 
 = Inputs
@@ -202,6 +226,7 @@ object({
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Description
+|[[output_external_ip]] <<output_external_ip,external_ip>> |External IP address of Traefik LB service.
 |[[output_id]] <<output_id,id>> |n/a
 |===
 // END_TF_TABLES
