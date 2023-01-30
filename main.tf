@@ -41,7 +41,7 @@ resource "argocd_application" "this" {
     namespace = var.argocd_namespace
   }
 
-  wait = true
+  wait = var.app_autosync == { "allow_empty" = tobool(null), "prune" = tobool(null), "self_heal" = tobool(null) } ? false : true
 
   spec {
     project = argocd_project.this.metadata.0.name
