@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.7](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-01-30)
+
+
+### Features
+
+* **wait:** add dependency to var app_autosync ([#30](https://github.com/camptocamp/devops-stack-module-traefik/issues/30)) ([430597e](https://github.com/camptocamp/devops-stack-module-traefik/commit/430597e4e42d8a4babb035351faf249f9ec490cb))
+
 ## [1.0.0-alpha.6](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-12-14)
 
 
