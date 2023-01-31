@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.8](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-01-31)
+
+
+### Features
+
+* **helm:** bump version to 20 ([#32](https://github.com/camptocamp/devops-stack-module-traefik/issues/32)) ([0a4c598](https://github.com/camptocamp/devops-stack-module-traefik/commit/0a4c598faf1e74b3d7496bf9351997a459cc2c25))
+
 ## [1.0.0-alpha.7](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-01-30)
 
 
