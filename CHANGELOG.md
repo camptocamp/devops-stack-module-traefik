@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.9](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-02-22)
+
+
+### Features
+
+* add KinD module ([#31](https://github.com/camptocamp/devops-stack-module-traefik/issues/31)) ([7cbafa7](https://github.com/camptocamp/devops-stack-module-traefik/commit/7cbafa75ba3f97f5387b45e03817c9055c482a45))
+
 ## [1.0.0-alpha.8](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-01-31)
 
 
