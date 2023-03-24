@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.9...v1.0.0) (2023-03-24)
+
+
+### Documentation
+
+* add docs structure and PR template ([#36](https://github.com/camptocamp/devops-stack-module-traefik/issues/36)) ([37b30ab](https://github.com/camptocamp/devops-stack-module-traefik/commit/37b30ab877ca4a80d6ad86d17a77ceefc937d8af))
+
 ## [1.0.0-alpha.9](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-02-22)
 
 
