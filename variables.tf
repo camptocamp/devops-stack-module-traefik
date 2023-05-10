@@ -3,15 +3,18 @@
 #######################
 
 variable "cluster_name" {
-  type = string
+  description = "Name given to the cluster. Value used for the ingress' URL of the application."
+  type        = string
 }
 
 variable "base_domain" {
-  type = string
+  description = "Base domain of the cluster. Value used for the ingress' URL of the application."
+  type        = string
 }
 
 variable "argocd_namespace" {
-  type = string
+  description = "Namespace used by Argo CD where the Application and AppProject resources should be created."
+  type        = string
 }
 
 variable "target_revision" {
@@ -21,8 +24,9 @@ variable "target_revision" {
 }
 
 variable "namespace" {
-  type    = string
-  default = "traefik"
+  description = "Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist."
+  type        = string
+  default     = "traefik"
 }
 
 variable "replicas" {
@@ -32,15 +36,9 @@ variable "replicas" {
 }
 
 variable "helm_values" {
-  description = "Helm values, passed as a list of HCL structures."
+  description = "Helm chart value overrides. They should be passed as a list of HCL structures."
   type        = any
   default     = []
-}
-
-variable "dependency_ids" {
-  type = map(string)
-
-  default = {}
 }
 
 variable "app_autosync" {
@@ -55,6 +53,12 @@ variable "app_autosync" {
     prune       = true
     self_heal   = true
   }
+}
+
+variable "dependency_ids" {
+  description = "IDs of the other modules on which this module depends on."
+  type        = map(string)
+  default     = {}
 }
 
 #######################
