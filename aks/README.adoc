@@ -79,6 +79,14 @@ Type: `string`
 
 Default: `"traefik"`
 
+==== [[input_replicas]] <<input_replicas,replicas>>
+
+Description: Number of traefik pods
+
+Type: `string`
+
+Default: `"2"`
+
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
 Description: Helm values, passed as a list of HCL structures.
@@ -201,6 +209,12 @@ Description: n/a
 |n/a
 |`string`
 |`"traefik"`
+|no
+
+|[[input_replicas]] <<input_replicas,replicas>>
+|Number of traefik pods
+|`string`
+|`"2"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
