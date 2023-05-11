@@ -4,16 +4,6 @@ locals {
       deployment = {
         replicas = var.replicas
       }
-      metrics = {
-        prometheus = {
-          service = {
-            enabled = true
-          }
-          serviceMonitor = {
-            enabled = true
-          }
-        }
-      }
       additionalArguments = [
         "--metrics.prometheus=true",
         "--serversTransport.insecureSkipVerify=true"
