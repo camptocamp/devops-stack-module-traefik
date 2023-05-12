@@ -26,7 +26,7 @@ variable "namespace" {
 }
 
 variable "replicas" {
-  description = "Number of traefik pods"
+  description = "Number of Traefik pods to be deployed."
   type        = string
   default     = "2"
 }
