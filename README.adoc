@@ -7,9 +7,9 @@ The following providers are used by this module:
 
 - [[provider_null]] <<provider_null,null>>
 
-- [[provider_argocd]] <<provider_argocd,argocd>>
-
 - [[provider_utils]] <<provider_utils,utils>>
+
+- [[provider_argocd]] <<provider_argocd,argocd>>
 
 === Resources
 
@@ -65,7 +65,7 @@ Default: `"traefik"`
 
 ==== [[input_replicas]] <<input_replicas,replicas>>
 
-Description: Number of traefik pods
+Description: Number of Traefik pods to be deployed.
 
 Type: `string`
 
@@ -127,9 +127,9 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |n/a
 |[[provider_utils]] <<provider_utils,utils>> |n/a
 |[[provider_argocd]] <<provider_argocd,argocd>> |n/a
+|[[provider_null]] <<provider_null,null>> |n/a
 |===
 
 = Resources
@@ -180,7 +180,7 @@ Description: n/a
 |no
 
 |[[input_replicas]] <<input_replicas,replicas>>
-|Number of traefik pods
+|Number of Traefik pods to be deployed.
 |`string`
 |`"2"`
 |no

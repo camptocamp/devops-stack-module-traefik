@@ -81,7 +81,7 @@ Default: `"traefik"`
 
 ==== [[input_replicas]] <<input_replicas,replicas>>
 
-Description: Number of traefik pods
+Description: Number of Traefik pods to be deployed.
 
 Type: `string`
 
@@ -212,7 +212,7 @@ Description: n/a
 |no
 
 |[[input_replicas]] <<input_replicas,replicas>>
-|Number of traefik pods
+|Number of Traefik pods to be deployed.
 |`string`
 |`"2"`
 |no
