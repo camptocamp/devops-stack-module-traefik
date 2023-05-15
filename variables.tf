@@ -25,6 +25,12 @@ variable "namespace" {
   default = "traefik"
 }
 
+variable "replicas" {
+  description = "Number of Traefik pods to be deployed."
+  type        = string
+  default     = "2"
+}
+
 variable "helm_values" {
   description = "Helm values, passed as a list of HCL structures."
   type        = any

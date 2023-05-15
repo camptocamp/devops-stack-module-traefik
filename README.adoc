@@ -5,11 +5,11 @@
 
 The following providers are used by this module:
 
+- [[provider_null]] <<provider_null,null>>
+
 - [[provider_utils]] <<provider_utils,utils>>
 
 - [[provider_argocd]] <<provider_argocd,argocd>>
-
-- [[provider_null]] <<provider_null,null>>
 
 === Resources
 
@@ -62,6 +62,14 @@ Description: n/a
 Type: `string`
 
 Default: `"traefik"`
+
+==== [[input_replicas]] <<input_replicas,replicas>>
+
+Description: Number of Traefik pods to be deployed.
+
+Type: `string`
+
+Default: `"2"`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -119,9 +127,9 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |n/a
 |[[provider_utils]] <<provider_utils,utils>> |n/a
 |[[provider_argocd]] <<provider_argocd,argocd>> |n/a
+|[[provider_null]] <<provider_null,null>> |n/a
 |===
 
 = Resources
@@ -169,6 +177,12 @@ Description: n/a
 |n/a
 |`string`
 |`"traefik"`
+|no
+
+|[[input_replicas]] <<input_replicas,replicas>>
+|Number of Traefik pods to be deployed.
+|`string`
+|`"2"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
