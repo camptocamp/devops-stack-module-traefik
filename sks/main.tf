@@ -1,5 +1,5 @@
 module "traefik" {
-  source = "../nodeport/"
+  source = "../"
 
   cluster_name     = var.cluster_name
   base_domain      = var.base_domain
