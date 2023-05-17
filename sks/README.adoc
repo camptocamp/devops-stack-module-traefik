@@ -13,13 +13,31 @@ The following Modules are called:
 
 ==== [[module_traefik]] <<module_traefik,traefik>>
 
-Source: ../nodeport/
+Source: ../
 
 Version:
 
 === Required Inputs
 
 The following input variables are required:
+
+==== [[input_nlb_id]] <<input_nlb_id,nlb_id>>
+
+Description: ID of the Exoscale NLB to use for the SKS cluster.
+
+Type: `string`
+
+==== [[input_router_nodepool_id]] <<input_router_nodepool_id,router_nodepool_id>>
+
+Description: ID of the node pool specifically created for Traefik.
+
+Type: `string`
+
+==== [[input_router_instance_pool_id]] <<input_router_instance_pool_id,router_instance_pool_id>>
+
+Description: Instance pool ID of the node pool specifically created for Traefik.
+
+Type: `string`
 
 ==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
 
@@ -113,7 +131,7 @@ The following outputs are exported:
 
 ==== [[output_id]] <<output_id,id>>
 
-Description: n/a
+Description: ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 = Requirements
@@ -130,7 +148,7 @@ Description: n/a
 [cols="a,a,a",options="header,autowidth"]
 |===
 |Name |Source |Version
-|[[module_traefik]] <<module_traefik,traefik>> |../nodeport/ |
+|[[module_traefik]] <<module_traefik,traefik>> |../ |
 |===
 
 = Inputs
@@ -138,6 +156,24 @@ Description: n/a
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
+|[[input_nlb_id]] <<input_nlb_id,nlb_id>>
+|ID of the Exoscale NLB to use for the SKS cluster.
+|`string`
+|n/a
+|yes
+
+|[[input_router_nodepool_id]] <<input_router_nodepool_id,router_nodepool_id>>
+|ID of the node pool specifically created for Traefik.
+|`string`
+|n/a
+|yes
+
+|[[input_router_instance_pool_id]] <<input_router_instance_pool_id,router_instance_pool_id>>
+|Instance pool ID of the node pool specifically created for Traefik.
+|`string`
+|n/a
+|yes
+
 |[[input_cluster_name]] <<input_cluster_name,cluster_name>>
 |Name given to the cluster. Value used for the ingress' URL of the application.
 |`string`
@@ -219,6 +255,6 @@ object({
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Description
-|[[output_id]] <<output_id,id>> |n/a
+|[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
 |===
 // END_TF_TABLES
