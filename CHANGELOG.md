@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0...v1.1.0) (2023-05-17)
+
+
+### Features
+
+* add variable for replicas ([#40](https://github.com/camptocamp/devops-stack-module-traefik/issues/40)) ([fdc0613](https://github.com/camptocamp/devops-stack-module-traefik/commit/fdc0613735b0bfbc1e3cf5b30cfa8f4c0684fefe))
+* **sks:** add configuration to make Traefik work with new SKS module ([#44](https://github.com/camptocamp/devops-stack-module-traefik/issues/44)) ([50f4f8f](https://github.com/camptocamp/devops-stack-module-traefik/commit/50f4f8fa9b52d7fa304367aeba66123d3540b7f9))
+
 ## [1.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0-alpha.9...v1.0.0) (2023-03-24)
 
 
