@@ -4,8 +4,18 @@ locals {
       deployment = {
         replicas = var.replicas
       }
+      metrics = {
+        prometheus = {
+          service = {
+            enabled = true
+          }
+          serviceMonitor = var.enable_service_monitor ? {
+            # dummy attribute to make serviceMonitor evaluate to true in a condition in the helm chart
+            foo = "bar"
+          } : {}
+        }
+      }
       additionalArguments = [
-        "--metrics.prometheus=true",
         "--serversTransport.insecureSkipVerify=true"
       ]
       logs = {
