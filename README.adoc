@@ -59,7 +59,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0"`
+Default: `"v1.1.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -76,6 +76,14 @@ Description: Number of Traefik pods to be deployed.
 Type: `string`
 
 Default: `"2"`
+
+==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+
+Description: Enable Prometheus ServiceMonitor in the Helm chart.
+
+Type: `bool`
+
+Default: `true`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -140,9 +148,9 @@ Description: ID to pass other modules in order to refer to this module as a depe
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |n/a
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
+|[[provider_null]] <<provider_null,null>> |n/a
 |===
 
 = Resources
@@ -183,7 +191,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0"`
+|`"v1.1.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -196,6 +204,12 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |Number of Traefik pods to be deployed.
 |`string`
 |`"2"`
+|no
+
+|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+|Enable Prometheus ServiceMonitor in the Helm chart.
+|`bool`
+|`true`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
