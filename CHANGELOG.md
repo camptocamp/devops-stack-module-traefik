@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.1.0...v1.2.0) (2023-05-22)
+
+
+### Features
+
+* enable monitoring by default and add Grafana dashboard ([#41](https://github.com/camptocamp/devops-stack-module-traefik/issues/41)) ([b89897d](https://github.com/camptocamp/devops-stack-module-traefik/commit/b89897d501efd7e763ec15e776d3718a77d2208e))
+
 ## [1.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.0.0...v1.1.0) (2023-05-17)
 
 
