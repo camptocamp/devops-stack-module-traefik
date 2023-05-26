@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.0...v1.2.1) (2023-05-26)
+
+
+### Bug Fixes
+
+* enable_service_monitor variable propagation from flavors to base module ([#46](https://github.com/camptocamp/devops-stack-module-traefik/issues/46)) ([5449546](https://github.com/camptocamp/devops-stack-module-traefik/commit/54495467b9b3685a5eaba3aab46ae5414482fc8b))
+
 ## [1.2.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.1.0...v1.2.0) (2023-05-22)
 
 
