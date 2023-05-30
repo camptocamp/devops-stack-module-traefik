@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.1...v1.2.2) (2023-05-30)
+
+
+### Bug Fixes
+
+* add missing providers ([#48](https://github.com/camptocamp/devops-stack-module-traefik/issues/48)) ([9ecaaeb](https://github.com/camptocamp/devops-stack-module-traefik/commit/9ecaaeb0229d95a07d6f39a79625a8938680d3ec))
+
 ## [1.2.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.0...v1.2.1) (2023-05-26)
 
 
