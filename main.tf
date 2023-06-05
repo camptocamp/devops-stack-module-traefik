@@ -35,6 +35,17 @@ data "utils_deep_merge_yaml" "values" {
   input = [for i in concat(local.helm_values, var.helm_values) : yamlencode(i)]
 }
 
+data "helm_template" "this" {
+  name      = "traefik"
+  namespace = var.namespace
+  chart     = "${path.module}/charts/traefik"
+  values    = [sensitive(data.utils_deep_merge_yaml.values.output)]
+}
+
+resource "null_resource" "k8s_resources" {
+  triggers = data.helm_template.this.manifests
+}
+
 resource "argocd_application" "this" {
   metadata {
     name      = "traefik"
