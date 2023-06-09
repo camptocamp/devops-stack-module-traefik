@@ -17,11 +17,7 @@ module "traefik" {
 
 data "kubernetes_service" "traefik" {
   metadata {
-    name      = local.helm_values.0.traefik.fullnameOverride
+    name      = replace(format("%s%s", local.helm_values.0.traefik.fullnameOverride, module.traefik.id), module.traefik.id ,"")
     namespace = var.namespace
   }
-
-  depends_on = [
-    module.traefik
-  ]
 }
