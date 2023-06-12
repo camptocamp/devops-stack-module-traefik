@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.2...v1.2.3) (2023-06-12)
+
+
+### Bug Fixes
+
+* **KinD:** avoid deferring data source reading when Helm values change ([#50](https://github.com/camptocamp/devops-stack-module-traefik/issues/50)) ([5ae76ca](https://github.com/camptocamp/devops-stack-module-traefik/commit/5ae76ca2b9175a30ca27e1822f5f0b1fbe1955f5))
+
 ## [1.2.2](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.1...v1.2.2) (2023-05-30)
 
 
