@@ -69,7 +69,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.2.1"`
+Default: `"v1.2.2"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -206,7 +206,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.2.1"`
+|`"v1.2.2"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
