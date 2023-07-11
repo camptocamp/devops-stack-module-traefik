@@ -3,7 +3,7 @@
 
 The following requirements are needed by this module:
 
-- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 4)
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 5)
 
 - [[requirement_null]] <<requirement_null,null>> (>= 3)
 
@@ -63,7 +63,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.2.2"`
+Default: `"v1.2.3"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -147,7 +147,7 @@ Description: External IP address of Traefik LB service.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 4
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 5
 |[[requirement_null]] <<requirement_null,null>> |>= 3
 |[[requirement_utils]] <<requirement_utils,utils>> |>= 1
 |===
@@ -202,7 +202,7 @@ Description: External IP address of Traefik LB service.
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.2.2"`
+|`"v1.2.3"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
