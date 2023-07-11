@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.3...v2.0.0) (2023-07-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* add support to oboukili/argocd v5 ([#52](https://github.com/camptocamp/devops-stack-module-traefik/issues/52))
+
+### Features
+
+* add support to oboukili/argocd v5 ([#52](https://github.com/camptocamp/devops-stack-module-traefik/issues/52)) ([dc9191f](https://github.com/camptocamp/devops-stack-module-traefik/commit/dc9191f4b0af5832255de86291d56ab0c92c35ed))
+
 ## [1.2.3](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.2...v1.2.3) (2023-06-12)
 
 
