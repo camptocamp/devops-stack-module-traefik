@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v2.0.0...v2.0.1) (2023-08-09)
+
+
+### Bug Fixes
+
+* readd support to deactivate auto-sync which was broken by [#52](https://github.com/camptocamp/devops-stack-module-traefik/issues/52) ([c1ac289](https://github.com/camptocamp/devops-stack-module-traefik/commit/c1ac28974a912c7497fe2494ead06c6bfd0bbae0))
+
 ## [2.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v1.2.3...v2.0.0) (2023-07-11)
 
 
