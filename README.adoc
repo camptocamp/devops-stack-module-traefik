@@ -1,4 +1,4 @@
-:traefik-chart-version: 20.8.0
+:traefik-chart-version: 24.0.0
 
 // BEGIN_TF_DOCS
 === Requirements
