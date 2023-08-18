@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v2.0.1...v3.0.0) (2023-08-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **chart:** major update of dependencies on traefik chart ([#56](https://github.com/camptocamp/devops-stack-module-traefik/issues/56)):
+
+  - [v20 -> v21](https://github.com/traefik/traefik-helm-chart/releases/tag/v21.0.0) - the changelog is not clear on what the breaking changes were...
+  - [v21 -> v22](https://github.com/traefik/traefik-helm-chart/releases/tag/v22.0.0) - `image.registry` was introduced in the `values.yaml` and if someone is overriding `image.repository`on their code they may also need to set `image.registry` (otherwise does not affect the internal code of the module);
+  - [v22 -> v23](https://github.com/traefik/traefik-helm-chart/releases/tag/v23.0.0) - the `API Group` of the CRDs was updated from `*.traefik.containo.us` to `*.traefik.io`; Argo CD is able to take care of this update automatically; **note that for the time being, the chart deploys both versions of the API Group but this could change in the future, sou you need to update your workloads accordingly**;
+  - [v23 -> v24](https://github.com/traefik/traefik-helm-chart/releases/tag/v24.0.0) - `healthchecksPort` and `healthchecksScheme` has moved from `ports.traefik` to `deployment`;
+
+### Features
+
+* **chart:** major update of dependencies on traefik chart ([#56](https://github.com/camptocamp/devops-stack-module-traefik/issues/56)) ([1181b22](https://github.com/camptocamp/devops-stack-module-traefik/commit/1181b22c7ded719ddc2ae82137e1a283b054d0f6))
+
 ## [2.0.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v2.0.0...v2.0.1) (2023-08-09)
 
 
