@@ -41,6 +41,10 @@ resource "argocd_application" "this" {
   metadata {
     name      = var.destination_cluster != "in-cluster" ? "traefik-${var.destination_cluster}" : "traefik"
     namespace = var.argocd_namespace
+    labels = merge({
+      "application" = "traefik"
+      "cluster"     = var.destination_cluster
+    }, var.argocd_labels)
   }
 
   wait = var.app_autosync == { "allow_empty" = tobool(null), "prune" = tobool(null), "self_heal" = tobool(null) } ? false : true
