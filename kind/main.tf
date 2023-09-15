@@ -1,10 +1,11 @@
 module "traefik" {
   source = "../"
 
-  cluster_name     = var.cluster_name
-  base_domain      = var.base_domain
-  argocd_namespace = var.argocd_namespace
-
+  cluster_name           = var.cluster_name
+  base_domain            = var.base_domain
+  argocd_namespace       = var.argocd_namespace
+  argocd_project         = var.argocd_project
+  destination_cluster    = var.destination_cluster
   target_revision        = var.target_revision
   namespace              = var.namespace
   enable_service_monitor = var.enable_service_monitor
@@ -17,7 +18,7 @@ module "traefik" {
 
 data "kubernetes_service" "traefik" {
   metadata {
-    name      = replace(format("%s%s", local.helm_values.0.traefik.fullnameOverride, module.traefik.id), module.traefik.id ,"")
+    name      = replace(format("%s%s", local.helm_values.0.traefik.fullnameOverride, module.traefik.id), module.traefik.id, "")
     namespace = var.namespace
   }
 }
