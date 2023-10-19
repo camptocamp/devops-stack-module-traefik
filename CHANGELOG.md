@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v3.0.0...v3.1.0) (2023-10-19)
+
+
+### Features
+
+* add standard variables and variable to add labels to Argo CD app ([c537d85](https://github.com/camptocamp/devops-stack-module-traefik/commit/c537d85fd0d7a68faebf495793ed0561048d6448))
+* add variables to set AppProject and destination cluster ([882ebb7](https://github.com/camptocamp/devops-stack-module-traefik/commit/882ebb7ba8c23fb139e2dfb9eed31793511fade0))
+
 ## [3.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v2.0.1...v3.0.0) (2023-08-18)
 
 
