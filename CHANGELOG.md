@@ -5,7 +5,10 @@
 
 ### ⚠ BREAKING CHANGES
 
-* **chart:** major update of dependencies on traefik chart ([#60](https://github.com/camptocamp/devops-stack-module-traefik/issues/60))
+* **chart:** major update of dependencies on traefik chart ([#60](https://github.com/camptocamp/devops-stack-module-traefik/issues/60)): if you are overloading the following values using the `helm_values` variable, please beware of the following breaking changes:
+
+  - On `redirectTo`, `ports.web.redirectTo=websecure` should become `ports.web.redirectTo.port=websecure`. More details in [this PR](https://github.com/traefik/traefik-helm-chart/pull/934).
+  - On `gateway`, all values are now flattened to `experimental.kubernetesGateway`. More details in [this PR](https://github.com/traefik/traefik-helm-chart/pull/927).
 
 ### Features
 
