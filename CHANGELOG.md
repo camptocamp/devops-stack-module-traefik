@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v3.1.0...v4.0.0) (2023-11-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* **chart:** major update of dependencies on traefik chart ([#60](https://github.com/camptocamp/devops-stack-module-traefik/issues/60))
+
+### Features
+
+* **chart:** major update of dependencies on traefik chart ([#60](https://github.com/camptocamp/devops-stack-module-traefik/issues/60)) ([915831e](https://github.com/camptocamp/devops-stack-module-traefik/commit/915831eadd082e34995e9742536b6535de0f9ab4))
+
 ## [3.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v3.0.0...v3.1.0) (2023-10-19)
 
 
