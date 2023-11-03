@@ -88,3 +88,9 @@ variable "dependency_ids" {
 #######################
 ## Module variables
 #######################
+
+variable "enable_https_redirection" {
+  description = "Enable HTTP to HTTPS redirection on all ingresses."
+  type        = bool
+  default     = true
+}
