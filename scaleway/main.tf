@@ -14,4 +14,6 @@ module "traefik" {
   enable_https_redirection = var.enable_https_redirection
 
   helm_values = concat(local.helm_values, var.helm_values)
+
+  dependency_ids = var.dependency_ids
 }
