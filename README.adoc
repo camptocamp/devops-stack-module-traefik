@@ -153,6 +153,14 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
+
+Description: Enable HTTP to HTTPS redirection on all ingresses.
+
+Type: `bool`
+
+Default: `true`
+
 === Outputs
 
 The following outputs are exported:
@@ -295,6 +303,12 @@ object({
 |IDs of the other modules on which this module depends on.
 |`map(string)`
 |`{}`
+|no
+
+|[[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
+|Enable HTTP to HTTPS redirection on all ingresses.
+|`bool`
+|`true`
 |no
 
 |===
