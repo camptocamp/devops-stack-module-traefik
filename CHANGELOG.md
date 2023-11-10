@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v4.0.0...v4.1.0) (2023-11-10)
+
+
+### Features
+
+* add HTTP to HTTPS redirection with associated variable ([574cd2b](https://github.com/camptocamp/devops-stack-module-traefik/commit/574cd2bfe68a9e155df02522bd4a43de81589a40))
+
+
+### Bug Fixes
+
+* add propagation of dependency ids on the Scaleway variant ([c52a812](https://github.com/camptocamp/devops-stack-module-traefik/commit/c52a812f2896affe292f2217558c625926006510))
+* change Traefik CRD group to the one introduced in v23 ([304f010](https://github.com/camptocamp/devops-stack-module-traefik/commit/304f0105b616f023de5e98a6e1b5b7332adb1ff9))
+
 ## [4.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v3.1.0...v4.0.0) (2023-11-02)
 
 
