@@ -10,7 +10,7 @@ locals {
             enabled = true
           }
           serviceMonitor = var.enable_service_monitor ? {
-            # dummy attribute to make serviceMonitor evaluate to true in a condition in the helm chart
+            # Dummy attribute to make serviceMonitor evaluate to true in a condition in the Helm chart
             foo = "bar"
           } : {}
         }
