@@ -47,12 +47,6 @@ variable "namespace" {
   default     = "traefik"
 }
 
-variable "replicas" {
-  description = "Number of Traefik pods to be deployed."
-  type        = string
-  default     = "2"
-}
-
 variable "enable_service_monitor" {
   description = "Enable Prometheus ServiceMonitor in the Helm chart."
   type        = bool
@@ -88,6 +82,12 @@ variable "dependency_ids" {
 #######################
 ## Module variables
 #######################
+
+variable "replicas" {
+  description = "Number of Traefik pods to be deployed."
+  type        = number
+  default     = 2
+}
 
 variable "enable_https_redirection" {
   description = "Enable HTTP to HTTPS redirection on all ingresses."
