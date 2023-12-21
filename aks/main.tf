@@ -1,21 +1,3 @@
-data "azurerm_dns_zone" "this" {
-  name                = var.base_domain
-  resource_group_name = var.dns_zone_resource_group_name
-}
-
-data "azurerm_resource_group" "nodes_resource_group" {
-  name = var.node_resource_group_name
-}
-
-# TODO should we move this out of here?
-resource "azurerm_dns_cname_record" "wildcard" {
-  name                = "*.apps.${var.cluster_name}"
-  zone_name           = data.azurerm_dns_zone.this.name
-  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
-  ttl                 = 300
-  record              = "${local.azure_dns_label_name}.${data.azurerm_resource_group.nodes_resource_group.location}.cloudapp.azure.com."
-}
-
 module "traefik" {
   source = "../"
 
