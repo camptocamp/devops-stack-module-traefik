@@ -93,7 +93,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v4.0.0"`
+Default: `"v4.1.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -102,14 +102,6 @@ Description: Namespace where the applications's Kubernetes resources should be c
 Type: `string`
 
 Default: `"traefik"`
-
-==== [[input_replicas]] <<input_replicas,replicas>>
-
-Description: Number of Traefik pods to be deployed.
-
-Type: `string`
-
-Default: `"2"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -158,6 +150,14 @@ Description: IDs of the other modules on which this module depends on.
 Type: `map(string)`
 
 Default: `{}`
+
+==== [[input_replicas]] <<input_replicas,replicas>>
+
+Description: Number of Traefik pods to be deployed.
+
+Type: `number`
+
+Default: `2`
 
 ==== [[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
 
@@ -256,19 +256,13 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v4.0.0"`
+|`"v4.1.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
 |Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
 |`string`
 |`"traefik"`
-|no
-
-|[[input_replicas]] <<input_replicas,replicas>>
-|Number of Traefik pods to be deployed.
-|`string`
-|`"2"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
@@ -313,6 +307,12 @@ object({
 |IDs of the other modules on which this module depends on.
 |`map(string)`
 |`{}`
+|no
+
+|[[input_replicas]] <<input_replicas,replicas>>
+|Number of Traefik pods to be deployed.
+|`number`
+|`2`
 |no
 
 |[[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>

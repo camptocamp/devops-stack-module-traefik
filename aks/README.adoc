@@ -9,12 +9,6 @@ The following requirements are needed by this module:
 
 - [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
-=== Providers
-
-The following providers are used by this module:
-
-- [[provider_azurerm]] <<provider_azurerm,azurerm>>
-
 === Modules
 
 The following Modules are called:
@@ -25,29 +19,9 @@ Source: ../
 
 Version:
 
-=== Resources
-
-The following resources are used by this module:
-
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_cname_record[azurerm_dns_cname_record.wildcard] (resource)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] (data source)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.nodes_resource_group] (data source)
-
 === Required Inputs
 
 The following input variables are required:
-
-==== [[input_node_resource_group_name]] <<input_node_resource_group_name,node_resource_group_name>>
-
-Description: The aks managed cluster resource group name.
-
-Type: `string`
-
-==== [[input_dns_zone_resource_group_name]] <<input_dns_zone_resource_group_name,dns_zone_resource_group_name>>
-
-Description: The Azure DNS zone's resource group name.
-
-Type: `string`
 
 ==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
 
@@ -101,7 +75,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v4.0.0"`
+Default: `"v4.1.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -110,14 +84,6 @@ Description: Namespace where the applications's Kubernetes resources should be c
 Type: `string`
 
 Default: `"traefik"`
-
-==== [[input_replicas]] <<input_replicas,replicas>>
-
-Description: Number of Traefik pods to be deployed.
-
-Type: `string`
-
-Default: `"2"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -167,6 +133,14 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_replicas]] <<input_replicas,replicas>>
+
+Description: Number of Traefik pods to be deployed.
+
+Type: `number`
+
+Default: `2`
+
 ==== [[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
 
 Description: Enable HTTP to HTTPS redirection on all ingresses.
@@ -194,14 +168,6 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[requirement_utils]] <<requirement_utils,utils>> |>= 1
 |===
 
-= Providers
-
-[cols="a,a",options="header,autowidth"]
-|===
-|Name |Version
-|[[provider_azurerm]] <<provider_azurerm,azurerm>> |n/a
-|===
-
 = Modules
 
 [cols="a,a,a",options="header,autowidth"]
@@ -210,33 +176,11 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[module_traefik]] <<module_traefik,traefik>> |../ |
 |===
 
-= Resources
-
-[cols="a,a",options="header,autowidth"]
-|===
-|Name |Type
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_cname_record[azurerm_dns_cname_record.wildcard] |resource
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] |data source
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.nodes_resource_group] |data source
-|===
-
 = Inputs
 
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
-|[[input_node_resource_group_name]] <<input_node_resource_group_name,node_resource_group_name>>
-|The aks managed cluster resource group name.
-|`string`
-|n/a
-|yes
-
-|[[input_dns_zone_resource_group_name]] <<input_dns_zone_resource_group_name,dns_zone_resource_group_name>>
-|The Azure DNS zone's resource group name.
-|`string`
-|n/a
-|yes
-
 |[[input_cluster_name]] <<input_cluster_name,cluster_name>>
 |Name given to the cluster. Value used for the ingress' URL of the application.
 |`string`
@@ -276,19 +220,13 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v4.0.0"`
+|`"v4.1.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
 |Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
 |`string`
 |`"traefik"`
-|no
-
-|[[input_replicas]] <<input_replicas,replicas>>
-|Number of Traefik pods to be deployed.
-|`string`
-|`"2"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
@@ -333,6 +271,12 @@ object({
 |IDs of the other modules on which this module depends on.
 |`map(string)`
 |`{}`
+|no
+
+|[[input_replicas]] <<input_replicas,replicas>>
+|Number of Traefik pods to be deployed.
+|`number`
+|`2`
 |no
 
 |[[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
