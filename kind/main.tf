@@ -8,7 +8,6 @@ module "traefik" {
   argocd_labels            = var.argocd_labels
   destination_cluster      = var.destination_cluster
   target_revision          = var.target_revision
-  namespace                = var.namespace
   enable_service_monitor   = var.enable_service_monitor
   app_autosync             = var.app_autosync
   enable_https_redirection = var.enable_https_redirection
@@ -21,6 +20,6 @@ module "traefik" {
 data "kubernetes_service" "traefik" {
   metadata {
     name      = replace(format("%s%s", local.helm_values.0.traefik.fullnameOverride, module.traefik.id), module.traefik.id, "")
-    namespace = var.namespace
+    namespace = "traefik"
   }
 }

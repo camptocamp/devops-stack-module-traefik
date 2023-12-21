@@ -41,12 +41,6 @@ variable "target_revision" {
   default     = "v4.1.0" # x-release-please-version
 }
 
-variable "namespace" {
-  description = "Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist."
-  type        = string
-  default     = "traefik"
-}
-
 variable "enable_service_monitor" {
   description = "Enable Prometheus ServiceMonitor in the Helm chart."
   type        = bool
