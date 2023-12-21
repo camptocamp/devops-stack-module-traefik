@@ -35,7 +35,7 @@ locals {
           }
         }
       } : null
-      ressources = {
+      ressources = { # TODO: use var.resources instead and fix the typo in "reSSources"
         limits = {
           cpu    = "250m"
           memory = "512Mi"
