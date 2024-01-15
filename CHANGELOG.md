@@ -5,11 +5,12 @@
 
 ### ⚠ BREAKING CHANGES
 
+* **aks:** remove DNS resources from this module
 * remove the ArgoCD namespace variable
 * remove the namespace variable
 * hardcode the release name to remove the destination cluster
-* **chart:** major update of dependencies on traefik chart ([#64](https://github.com/camptocamp/devops-stack-module-traefik/issues/64))
-* **aks:** remove DNS resources from this module
+* **chart:** major update of dependencies on traefik chart ([#64](https://github.com/camptocamp/devops-stack-module-traefik/issues/64)): 
+  The 2 breaking changes noted on the official release notes are applicable to only the users that overload the `deployment.podAnnotations` or the `experimental.plugins keys`. The behavior of these keys has changed, as described in the PRs https://github.com/traefik/traefik-helm-chart/pull/972 and https://github.com/traefik/traefik-helm-chart/pull/961, respectively.
 
 ### Features
 
