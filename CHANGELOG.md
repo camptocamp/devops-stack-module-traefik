@@ -1,5 +1,28 @@
 # Changelog
 
+## [5.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v4.1.0...v5.0.0) (2024-01-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove the ArgoCD namespace variable
+* remove the namespace variable
+* hardcode the release name to remove the destination cluster
+* **chart:** major update of dependencies on traefik chart ([#64](https://github.com/camptocamp/devops-stack-module-traefik/issues/64))
+* **aks:** remove DNS resources from this module
+
+### Features
+
+* **aks:** remove DNS resources from this module ([19eb83a](https://github.com/camptocamp/devops-stack-module-traefik/commit/19eb83ad3167409b789fe52ac4adb2c536d35e0a))
+* **chart:** major update of dependencies on traefik chart ([#64](https://github.com/camptocamp/devops-stack-module-traefik/issues/64)) ([d7e1327](https://github.com/camptocamp/devops-stack-module-traefik/commit/d7e1327d2cc65fa6ed28c75038aae2d8baee7390))
+
+
+### Bug Fixes
+
+* hardcode the release name to remove the destination cluster ([18a4d45](https://github.com/camptocamp/devops-stack-module-traefik/commit/18a4d45f9ca22ebeea1df9c7ae053095e871d078))
+* remove the ArgoCD namespace variable ([524d6c2](https://github.com/camptocamp/devops-stack-module-traefik/commit/524d6c2a139ebec869b24108a407118c137b01d2))
+* remove the namespace variable ([3e7b33f](https://github.com/camptocamp/devops-stack-module-traefik/commit/3e7b33fefc2cc928557a29e3b144a1e40efcdbf3))
+
 ## [4.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v4.0.0...v4.1.0) (2023-11-10)
 
 
