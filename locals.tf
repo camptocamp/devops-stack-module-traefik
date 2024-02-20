@@ -45,15 +45,6 @@ locals {
           memory = "256Mi"
         }
       }
-      middlewares = {
-        redirections = {
-          withclustername = {
-            permanent   = false
-            regex       = "${trimprefix("${var.subdomain}.${var.base_domain}", ".")}"
-            replacement = "${trimprefix("${var.subdomain}.${var.cluster_name}", ".")}.${var.base_domain}"
-          }
-        }
-      }
     }
   }]
 }
