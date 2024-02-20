@@ -16,6 +16,7 @@ variable "subdomain" {
   description = "Subdomain of the cluster. Value used for the ingress' URL of the application."
   type        = string
   default     = "apps"
+  nullable    = false
 }
 
 variable "argocd_project" {
@@ -86,6 +87,12 @@ variable "replicas" {
 
 variable "enable_https_redirection" {
   description = "Enable HTTP to HTTPS redirection on all ingresses."
+  type        = bool
+  default     = true
+}
+
+variable "enable_cluster_name_redirection_middleware" {
+  description = "Enable the middleware to add the cluster name in the URL when it is not present."
   type        = bool
   default     = true
 }
