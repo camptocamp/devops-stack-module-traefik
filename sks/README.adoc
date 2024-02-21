@@ -41,18 +41,6 @@ Description: Instance pool ID of the node pool specifically created for Traefik.
 
 Type: `string`
 
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: Name given to the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-==== [[input_base_domain]] <<input_base_domain,base_domain>>
-
-Description: Base domain of the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
 === Optional Inputs
 
 The following input variables are optional (have default values):
@@ -153,6 +141,14 @@ Type: `bool`
 
 Default: `true`
 
+==== [[input_enable_cluster_name_redirection_middleware]] <<input_enable_cluster_name_redirection_middleware,enable_cluster_name_redirection_middleware>>
+
+Description: Enable the middleware to add the cluster name in the URL when it is not present.
+
+Type: `bool`
+
+Default: `true`
+
 === Outputs
 
 The following outputs are exported:
@@ -199,18 +195,6 @@ Description: ID to pass other modules in order to refer to this module as a depe
 
 |[[input_router_instance_pool_id]] <<input_router_instance_pool_id,router_instance_pool_id>>
 |Instance pool ID of the node pool specifically created for Traefik.
-|`string`
-|n/a
-|yes
-
-|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
-|Name given to the cluster. Value used for the ingress' URL of the application.
-|`string`
-|n/a
-|yes
-
-|[[input_base_domain]] <<input_base_domain,base_domain>>
-|Base domain of the cluster. Value used for the ingress' URL of the application.
 |`string`
 |n/a
 |yes
@@ -291,6 +275,12 @@ object({
 
 |[[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
 |Enable HTTP to HTTPS redirection on all ingresses.
+|`bool`
+|`true`
+|no
+
+|[[input_enable_cluster_name_redirection_middleware]] <<input_enable_cluster_name_redirection_middleware,enable_cluster_name_redirection_middleware>>
+|Enable the middleware to add the cluster name in the URL when it is not present.
 |`bool`
 |`true`
 |no
