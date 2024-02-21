@@ -2,23 +2,6 @@
 ## Standard variables
 #######################
 
-variable "cluster_name" {
-  description = "Name given to the cluster. Value used for the ingress' URL of the application."
-  type        = string
-}
-
-variable "base_domain" {
-  description = "Base domain of the cluster. Value used for the ingress' URL of the application."
-  type        = string
-}
-
-variable "subdomain" {
-  description = "Subdomain of the cluster. Value used for the ingress' URL of the application."
-  type        = string
-  default     = "apps"
-  nullable    = false
-}
-
 variable "argocd_project" {
   description = "Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application."
   type        = string
