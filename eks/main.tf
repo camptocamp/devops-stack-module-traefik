@@ -1,9 +1,6 @@
 module "traefik" {
   source = "../nodeport/"
 
-  cluster_name             = var.cluster_name
-  base_domain              = var.base_domain
-  subdomain                = var.subdomain
   argocd_project           = var.argocd_project
   argocd_labels            = var.argocd_labels
   destination_cluster      = var.destination_cluster
