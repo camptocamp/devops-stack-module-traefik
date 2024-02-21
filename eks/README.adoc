@@ -19,22 +19,6 @@ Source: ../nodeport/
 
 Version:
 
-=== Required Inputs
-
-The following input variables are required:
-
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: Name given to the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-==== [[input_base_domain]] <<input_base_domain,base_domain>>
-
-Description: Base domain of the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
 === Optional Inputs
 
 The following input variables are optional (have default values):
@@ -135,6 +119,14 @@ Type: `bool`
 
 Default: `true`
 
+==== [[input_enable_cluster_name_redirection_middleware]] <<input_enable_cluster_name_redirection_middleware,enable_cluster_name_redirection_middleware>>
+
+Description: Enable the middleware to add the cluster name in the URL when it is not present.
+
+Type: `bool`
+
+Default: `true`
+
 === Outputs
 
 The following outputs are exported:
@@ -167,18 +159,6 @@ Description: ID to pass other modules in order to refer to this module as a depe
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
-|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
-|Name given to the cluster. Value used for the ingress' URL of the application.
-|`string`
-|n/a
-|yes
-
-|[[input_base_domain]] <<input_base_domain,base_domain>>
-|Base domain of the cluster. Value used for the ingress' URL of the application.
-|`string`
-|n/a
-|yes
-
 |[[input_argocd_project]] <<input_argocd_project,argocd_project>>
 |Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application.
 |`string`
@@ -255,6 +235,12 @@ object({
 
 |[[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
 |Enable HTTP to HTTPS redirection on all ingresses.
+|`bool`
+|`true`
+|no
+
+|[[input_enable_cluster_name_redirection_middleware]] <<input_enable_cluster_name_redirection_middleware,enable_cluster_name_redirection_middleware>>
+|Enable the middleware to add the cluster name in the URL when it is not present.
 |`bool`
 |`true`
 |no
