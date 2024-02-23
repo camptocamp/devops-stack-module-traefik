@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v6.1.0...v6.1.1) (2024-02-23)
+
+
+### Bug Fixes
+
+* remove leftover unused variable ([#72](https://github.com/camptocamp/devops-stack-module-traefik/issues/72)) ([c4c882d](https://github.com/camptocamp/devops-stack-module-traefik/commit/c4c882dfe2be01194a7faf9faf71e4be4059348f))
+
 ## [6.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v6.0.0...v6.1.0) (2024-02-23)
 
 
