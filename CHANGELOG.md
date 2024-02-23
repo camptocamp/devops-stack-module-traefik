@@ -1,5 +1,33 @@
 # Changelog
 
+## [6.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v5.0.0...v6.0.0) (2024-02-23)
+
+
+### :warning: BREAKING CHANGES
+
+* move global variables to the variant that requires them
+  
+  After the removal of the redirection middleware, we noticed that the variables `cluster_name` and `base_domain` were not used except in the AKS variant, as such, we relocated them specifically to that variant.
+
+  As such, this is a breaking change for all the variants, with the exception of the AKS variant.
+
+### :warning: WARNING
+
+* remove the middleware to allow configuration of the subdomain
+
+  The addition of the variable `subdomain` on the other DevOps Stack modules posed some issues with the redirection middleware added by this module when the variable was set as an empty string. Consequently, we pondered on the utility of said middleware and we decided it is best to remove it.
+
+  This is not a breaking change *per se*, but you need to make sure of 2 things:
+    - you callback URLs on your OIDC configuration now need to include both the domain with and without the cluster name, otherwise you will have authentication errors.
+    - if you any of your workload´s ingresses relied on the this middleware for redirection, make sure to adapt it to respond to both the domain with and without the cluster name. 
+
+
+### Bug Fixes
+
+* make subdomain variable non-nullable ([014bb29](https://github.com/camptocamp/devops-stack-module-traefik/commit/014bb2914f4ac81d67245c40900f5c83b30042b9))
+* move global variables to the variant that requires them ([657a829](https://github.com/camptocamp/devops-stack-module-traefik/commit/657a82912776103302c1887b61cdd97fa62cfcc0))
+* remove the middleware to allow configuration of the subdomain ([37d7f4d](https://github.com/camptocamp/devops-stack-module-traefik/commit/37d7f4d13f3b9eae94eefbce15b88c4801f9cf7c))
+
 ## [5.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v4.1.0...v5.0.0) (2024-01-15)
 
 
