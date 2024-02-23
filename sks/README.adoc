@@ -75,7 +75,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v6.0.0"`
+Default: `"v6.1.0"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -136,14 +136,6 @@ Default: `2`
 ==== [[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
 
 Description: Enable HTTP to HTTPS redirection on all ingresses.
-
-Type: `bool`
-
-Default: `true`
-
-==== [[input_enable_cluster_name_redirection_middleware]] <<input_enable_cluster_name_redirection_middleware,enable_cluster_name_redirection_middleware>>
-
-Description: Enable the middleware to add the cluster name in the URL when it is not present.
 
 Type: `bool`
 
@@ -220,7 +212,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v6.0.0"`
+|`"v6.1.0"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
@@ -275,12 +267,6 @@ object({
 
 |[[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
 |Enable HTTP to HTTPS redirection on all ingresses.
-|`bool`
-|`true`
-|no
-
-|[[input_enable_cluster_name_redirection_middleware]] <<input_enable_cluster_name_redirection_middleware,enable_cluster_name_redirection_middleware>>
-|Enable the middleware to add the cluster name in the URL when it is not present.
 |`bool`
 |`true`
 |no
