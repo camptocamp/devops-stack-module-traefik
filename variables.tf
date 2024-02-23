@@ -73,9 +73,3 @@ variable "enable_https_redirection" {
   type        = bool
   default     = true
 }
-
-variable "enable_cluster_name_redirection_middleware" {
-  description = "Enable the middleware to add the cluster name in the URL when it is not present."
-  type        = bool
-  default     = true
-}
