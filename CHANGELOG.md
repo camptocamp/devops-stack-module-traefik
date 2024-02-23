@@ -1,5 +1,23 @@
 # Changelog
 
+## [6.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v5.0.0...v6.0.0) (2024-02-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* move global variables to the variant that requires them
+
+### Features
+
+* add a subdomain variable ([014bb29](https://github.com/camptocamp/devops-stack-module-traefik/commit/014bb2914f4ac81d67245c40900f5c83b30042b9))
+
+
+### Bug Fixes
+
+* make subdomain variable non-nullable ([014bb29](https://github.com/camptocamp/devops-stack-module-traefik/commit/014bb2914f4ac81d67245c40900f5c83b30042b9))
+* move global variables to the variant that requires them ([657a829](https://github.com/camptocamp/devops-stack-module-traefik/commit/657a82912776103302c1887b61cdd97fa62cfcc0))
+* remove the middleware to allow configuration of the subdomain ([37d7f4d](https://github.com/camptocamp/devops-stack-module-traefik/commit/37d7f4d13f3b9eae94eefbce15b88c4801f9cf7c))
+
 ## [5.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v4.1.0...v5.0.0) (2024-01-15)
 
 
