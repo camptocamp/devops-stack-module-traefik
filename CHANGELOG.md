@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v6.1.1...v6.2.0) (2024-03-01)
+
+
+### Features
+
+* make the dashboard deployment dynamic ([#74](https://github.com/camptocamp/devops-stack-module-traefik/issues/74)) ([8b99d6e](https://github.com/camptocamp/devops-stack-module-traefik/commit/8b99d6eac6b0f28746b9fd8193bee5061d6e67f1))
+
 ## [6.1.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v6.1.0...v6.1.1) (2024-02-23)
 
 
