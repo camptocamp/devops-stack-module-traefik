@@ -69,7 +69,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v6.1.1"`
+Default: `"v6.2.0"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -126,6 +126,29 @@ Description: Number of Traefik pods to be deployed.
 Type: `number`
 
 Default: `2`
+
+==== [[input_resources]] <<input_resources,resources>>
+
+Description: Resource limits and requests for Traefik's pods. Follow the style on https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/[official documentation] to understand the format of the values.
+
+IMPORTANT: These are not production values. You should always adjust them to your needs.
+
+Type:
+[source,hcl]
+----
+object({
+    requests = optional(object({
+      cpu    = optional(string, "150m")
+      memory = optional(string, "128Mi")
+    }), {})
+    limits = optional(object({
+      cpu    = optional(string)
+      memory = optional(string, "256Mi")
+    }), {})
+  })
+----
+
+Default: `{}`
 
 ==== [[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
 
@@ -200,7 +223,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v6.1.1"`
+|`"v6.2.0"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
@@ -251,6 +274,30 @@ object({
 |Number of Traefik pods to be deployed.
 |`number`
 |`2`
+|no
+
+|[[input_resources]] <<input_resources,resources>>
+|Resource limits and requests for Traefik's pods. Follow the style on https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/[official documentation] to understand the format of the values.
+
+IMPORTANT: These are not production values. You should always adjust them to your needs.
+
+|
+
+[source]
+----
+object({
+    requests = optional(object({
+      cpu    = optional(string, "150m")
+      memory = optional(string, "128Mi")
+    }), {})
+    limits = optional(object({
+      cpu    = optional(string)
+      memory = optional(string, "256Mi")
+    }), {})
+  })
+----
+
+|`{}`
 |no
 
 |[[input_enable_https_redirection]] <<input_enable_https_redirection,enable_https_redirection>>
