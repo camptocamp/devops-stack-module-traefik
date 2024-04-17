@@ -68,6 +68,25 @@ variable "replicas" {
   default     = 2
 }
 
+variable "resources" {
+  description = <<-EOT
+    Resource limits and requests for Traefik's pods. Follow the style on https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/[official documentation] to understand the format of the values.
+
+    IMPORTANT: These are not production values. You should always adjust them to your needs.
+  EOT
+  type = object({
+    requests = optional(object({
+      cpu    = optional(string, "150m")
+      memory = optional(string, "128Mi")
+    }), {})
+    limits = optional(object({
+      cpu    = optional(string)
+      memory = optional(string, "256Mi")
+    }), {})
+  })
+  default = {}
+}
+
 variable "enable_https_redirection" {
   description = "Enable HTTP to HTTPS redirection on all ingresses."
   type        = bool
