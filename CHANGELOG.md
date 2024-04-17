@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.3.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v6.2.0...v6.3.0) (2024-04-17)
+
+
+### Features
+
+* add variable to set resources with default values ([#76](https://github.com/camptocamp/devops-stack-module-traefik/issues/76)) ([ed77f88](https://github.com/camptocamp/devops-stack-module-traefik/commit/ed77f885196f7c0b10e77190f7643607cef88aa0))
+
 ## [6.2.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v6.1.1...v6.2.0) (2024-03-01)
 
 
