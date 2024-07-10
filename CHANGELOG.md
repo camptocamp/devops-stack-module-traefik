@@ -5,7 +5,22 @@
 
 ### ⚠ BREAKING CHANGES
 
-* **chart:** major update of dependencies on traefik chart ([#77](https://github.com/camptocamp/devops-stack-module-traefik/issues/77))
+* **chart:** major update of dependencies on traefik chart ([#77](https://github.com/camptocamp/devops-stack-module-traefik/issues/77)):
+
+  * [v26.1.0 -> v27.0.0](https://github.com/traefik/traefik-helm-chart/releases/tag/v27.0.0):
+    * if you were overriding port exposure behavior using the `expose` or `exposeInternal` flags, you should replace them with a service name to boolean mapping ([check the official changelog](https://github.com/traefik/traefik-helm-chart/releases/tag/v27.0.0) for an example).
+    * if you were previously using the `service.internal` value, you should migrate the values to the `service.additionalServices.internal` value instead; this should yield the same results, but make sure to carefully check for any changes!
+    * resources that use the `traefik.containo.us` are definitely no longer supported; the other modules of the DevOps Stack have already been migrated, but make sure you make the changes on your side.
+
+  * [v27.0.2 -> v28.0.0](https://github.com/traefik/traefik-helm-chart/releases/tag/v28.0.0):
+    * multiple CRDs have been updated but the users of the DevOps Stack do not need to update them manually since Argo CD takes care of it;
+    * the upstream team added the first experimental support for Traefik v3; a migration guide for your resources is available [here](https://doc.traefik.io/traefik/v3.0/migration/v2-to-v3/);
+    * this upgrade also introduces support to OpenTelemetry; although this is not a breaking change, it is noteworthy;
+
+  * [v28.3.0 -> v29.0.0](https://github.com/traefik/traefik-helm-chart/compare/v28.3.0...v29.0.0):
+    * there is change in the values that affects the way we activate the ServiceMonitor for Prometheus; we can now use an attribute `enabled` to activate it; see [here](https://github.com/traefik/traefik-helm-chart/pull/1114);
+    * Kubernetes Gateway support is no longer experimental;
+    * the IngressRoute for the Traefik Dashboard is now disabled by default.
 
 ### Features
 
