@@ -6,6 +6,7 @@
 ### ⚠ BREAKING CHANGES
 
 * **chart:** major update of dependencies on traefik chart
+  * The [v30](https://github.com/traefik/traefik-helm-chart/compare/v29.0.1...v30.0.0) of the chart includes a breaking change because the values of the Gateway API implementation have changed. This change does not affect us directly on the DevOps Stack, and since this is a very new feature I do not see it affecting any of our deployments.
 
 ### Features
 
