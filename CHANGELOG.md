@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v7.0.0...v8.0.0) (2024-08-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **chart:** major update of dependencies on traefik chart
+  * The [v30](https://github.com/traefik/traefik-helm-chart/compare/v29.0.1...v30.0.0) of the chart includes a breaking change because the values of the Gateway API implementation have changed. This change does not affect us directly on the DevOps Stack, and since this is a very new feature I do not see it affecting any of our deployments.
+
+### Features
+
+* **chart:** major update of dependencies on traefik chart ([1ba9afa](https://github.com/camptocamp/devops-stack-module-traefik/commit/1ba9afabf6521c21395de447fd32485cb66d041f))
+
 ## [7.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v6.3.0...v7.0.0) (2024-07-10)
 
 
