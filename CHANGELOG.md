@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v8.0.0...v8.1.0) (2024-08-20)
+
+
+### Features
+
+* **chart:** minor update of dependencies on traefik chart ([#83](https://github.com/camptocamp/devops-stack-module-traefik/issues/83)) ([58b3f1c](https://github.com/camptocamp/devops-stack-module-traefik/commit/58b3f1ceed146c75f839adb6c4cd9ac0bb671449))
+
 ## [8.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v7.0.0...v8.0.0) (2024-08-15)
 
 
