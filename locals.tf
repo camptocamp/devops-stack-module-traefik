@@ -3,6 +3,9 @@ locals {
     traefik = {
       deployment = {
         replicas = var.replicas
+        podLabels = {
+          app = "traefik"
+        }
       }
       metrics = {
         prometheus = {
