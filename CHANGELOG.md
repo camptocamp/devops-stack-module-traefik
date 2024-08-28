@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.2.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v8.1.0...v8.2.0) (2024-08-28)
+
+
+### Features
+
+* add a label to traefik pods ([#85](https://github.com/camptocamp/devops-stack-module-traefik/issues/85)) ([31150dc](https://github.com/camptocamp/devops-stack-module-traefik/commit/31150dc51ca638babe734cf2dbda099f53f9283c))
+
 ## [8.1.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v8.0.0...v8.1.0) (2024-08-20)
 
 
