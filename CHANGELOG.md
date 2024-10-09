@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v8.2.0...v9.0.0) (2024-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* point the Argo CD provider to the new repository ([#88](https://github.com/camptocamp/devops-stack-module-traefik/issues/88))
+
+### Features
+
+* point the Argo CD provider to the new repository ([#88](https://github.com/camptocamp/devops-stack-module-traefik/issues/88)) ([8fdd7ec](https://github.com/camptocamp/devops-stack-module-traefik/commit/8fdd7ec81a4f432050542fa3fdc568f8c7fea3cb))
+
 ## [8.2.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v8.1.0...v8.2.0) (2024-08-28)
 
 
