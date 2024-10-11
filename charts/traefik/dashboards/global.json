@@ -809,8 +809,8 @@
       {
         "current": {
           "selected": false,
-          "text": "Thanos",
-          "value": "P5DCFC7561CCDE821"
+          "text": "",
+          "value": ""
         },
         "hide": 0,
         "includeAll": false,
@@ -828,8 +828,8 @@
       {
         "current": {
           "selected": false,
-          "text": "argocd-argocd-server-80",
-          "value": "argocd-argocd-server-80"
+          "text": "",
+          "value": ""
         },
         "datasource": {
           "type": "prometheus",
