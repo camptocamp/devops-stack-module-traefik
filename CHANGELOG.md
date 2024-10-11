@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.0.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v9.0.0...v9.0.1) (2024-10-11)
+
+
+### Bug Fixes
+
+* grafana panels uses angular deprecated plugin ([#90](https://github.com/camptocamp/devops-stack-module-traefik/issues/90)) ([5c9cafb](https://github.com/camptocamp/devops-stack-module-traefik/commit/5c9cafbf8e3c9ec522579ee562aa82e57bf9c909))
+
 ## [9.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v8.2.0...v9.0.0) (2024-10-09)
 
 
