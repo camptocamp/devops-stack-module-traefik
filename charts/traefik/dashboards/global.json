@@ -685,7 +685,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
-          "legendFormat": "{{ method }} : { {code }}",
+          "legendFormat": "{{ method }} : {{ code }}",
           "range": true,
           "refId": "A"
         }
