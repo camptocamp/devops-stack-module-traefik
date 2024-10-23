@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.0.2](https://github.com/camptocamp/devops-stack-module-traefik/compare/v9.0.1...v9.0.2) (2024-10-23)
+
+
+### Bug Fixes
+
+* **dashboards:** add release in file name to avoid duplicates ([#92](https://github.com/camptocamp/devops-stack-module-traefik/issues/92)) ([de09c28](https://github.com/camptocamp/devops-stack-module-traefik/commit/de09c289d0f1a30c9c220ba2ba7730acea245c9f))
+
 ## [9.0.1](https://github.com/camptocamp/devops-stack-module-traefik/compare/v9.0.0...v9.0.1) (2024-10-11)
 
 
