@@ -29,15 +29,15 @@ Description: ID of the Exoscale NLB to use for the SKS cluster.
 
 Type: `string`
 
-==== [[input_router_nodepool_id]] <<input_router_nodepool_id,router_nodepool_id>>
+==== [[input_target_nodepool_id]] <<input_target_nodepool_id,target_nodepool_id>>
 
-Description: ID of the node pool specifically created for Traefik.
+Description: ID of the target node pool.
 
 Type: `string`
 
-==== [[input_router_instance_pool_id]] <<input_router_instance_pool_id,router_instance_pool_id>>
+==== [[input_target_instance_pool_id]] <<input_target_instance_pool_id,target_instance_pool_id>>
 
-Description: Instance pool ID of the node pool specifically created for Traefik.
+Description: Instance pool ID of the target node pool.
 
 Type: `string`
 
@@ -75,7 +75,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v9.0.1"`
+Default: `"v9.0.2"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -202,14 +202,14 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |n/a
 |yes
 
-|[[input_router_nodepool_id]] <<input_router_nodepool_id,router_nodepool_id>>
-|ID of the node pool specifically created for Traefik.
+|[[input_target_nodepool_id]] <<input_target_nodepool_id,target_nodepool_id>>
+|ID of the target node pool.
 |`string`
 |n/a
 |yes
 
-|[[input_router_instance_pool_id]] <<input_router_instance_pool_id,router_instance_pool_id>>
-|Instance pool ID of the node pool specifically created for Traefik.
+|[[input_target_instance_pool_id]] <<input_target_instance_pool_id,target_instance_pool_id>>
+|Instance pool ID of the target node pool.
 |`string`
 |n/a
 |yes
@@ -235,7 +235,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v9.0.1"`
+|`"v9.0.2"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
