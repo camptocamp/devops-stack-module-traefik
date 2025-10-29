@@ -1,5 +1,16 @@
 # Changelog
 
+## [10.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v9.0.2...v10.0.0) (2025-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **sks:** remove pre-configured router node constraints ([#94](https://github.com/camptocamp/devops-stack-module-traefik/issues/94))
+
+### Features
+
+* **sks:** remove pre-configured router node constraints ([#94](https://github.com/camptocamp/devops-stack-module-traefik/issues/94)) ([1e0da04](https://github.com/camptocamp/devops-stack-module-traefik/commit/1e0da049b2f1a7e043b6313e6a5ea1ab65464837))
+
 ## [9.0.2](https://github.com/camptocamp/devops-stack-module-traefik/compare/v9.0.1...v9.0.2) (2024-10-23)
 
 
