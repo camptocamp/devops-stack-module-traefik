@@ -3,12 +3,12 @@ variable "nlb_id" {
   type        = string
 }
 
-variable "router_nodepool_id" {
-  description = "ID of the node pool specifically created for Traefik."
+variable "target_nodepool_id" {
+  description = "ID of the target node pool."
   type        = string
 }
 
-variable "router_instance_pool_id" {
-  description = "Instance pool ID of the node pool specifically created for Traefik."
+variable "target_instance_pool_id" {
+  description = "Instance pool ID of the target node pool."
   type        = string
 }
