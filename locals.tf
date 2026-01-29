@@ -32,8 +32,13 @@ locals {
       }
       ports = var.enable_https_redirection ? {
         web = {
-          redirectTo = {
-            port = "websecure"
+          http = {
+            redirections = {
+              entryPoint = {
+                to     = "websecure"
+                scheme = "https"
+              }
+            }
           }
         }
       } : null
