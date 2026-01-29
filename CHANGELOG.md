@@ -1,5 +1,81 @@
 # Changelog
 
+## [11.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v10.0.0...v11.0.0) (2026-01-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **chart:** upgrade Traefik chart to v39.0.0 ([#96](https://github.com/camptocamp/devops-stack-module-traefik/issues/96))
+
+#### [v31.0.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3100----)
+
+- fix!: 🐛 set allowEmptyServices to true by default → this changes the default behavior of Ingress and IngressRoute when there is no endpoints available; it will now return a 503 Service Unavailable instead of a 404 Not Found.
+
+#### v32.0.0
+
+- The breaking changes are not clear… Actually there isn’t even a v32.0.0, only a v32.0.0-rc1 and a v32.1.0.
+- It seems that the changes are only related to the hub section of the values (i.e. Traefik Hub).
+
+#### [v33.0.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3300----)
+
+- The default port of `traefik` entrypoint has changed from 9000 to 8080, just like the Traefik Proxy default port.
+  - You may have to update probes accordingly (or set this port back to 9000)
+- `publishedService` is enabled by default on Ingress provider.
+- In values, `certResolvers` specific syntax has been reworked to align with Traefik Proxy syntax.
+  - Does not affect us, because we use cert-manager to manage certificates and not the built-in mechanism on Traefik.
+- Traefik Proxy 3.2 supports Gateway API v1.2 (standard channel)
+
+#### [v34.0.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3400----)
+
+- When using `namespaceOverride`, the label selector will be changed. On a production environment, it's recommended to deploy a new instance with the new version, switch the traffic to it and delete the previous one. See PR [#1290](https://github.com/traefik/traefik-helm-chart/pull/1290) for more information.
+- `ports.x.redirectTo` has been refactored to be aligned with upstream syntax. See PR [#1301](https://github.com/traefik/traefik-helm-chart/pull/1301) for a complete before / after example.
+
+#### [v35.1.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3510----)
+
+- NOTE: There is no v35.0.0 in the changelog!
+- Traefik-Hub users should follow this procedure:
+  - `APIAccess` resources needs to be converted to APICatalogItem ones
+  - run the [usual upgrade procedure](https://github.com/traefik/traefik-helm-chart/blob/master/README.md#upgrading)
+  - delete the APIAccess CRD by running
+
+#### [v36.0.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3600----)
+
+- There is a breaking change on globalArguments which has been replaced by global.xx, following upstream. See PR [#1436](https://github.com/traefik/traefik-helm-chart/pull/1436) for details.
+- Previously, these settings were passed as:
+
+  ```
+  globalArguments:
+    - "--global.checknewversion"
+    - "--global.sendanonymoususage"
+  ```
+
+- Following GDPR, anonymous stats usage has been disabled by default. Please take time to consider whether or not you wish to share anonymous data to help TraefikLabs improve Traefik Proxy (`global.sendAnonymousUsage` is now false by default).
+
+#### [v37.0.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3700----)
+
+- There is a commit message (`feat(gateway-api)!: support selector for namespace policy`) with a breaking change, but no further information provided. Since it is related to Gateway API, it should not affect us.
+
+#### [v38.0.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3800----)
+
+- There are two breaking changes in this release:
+  - Traefik Proxy v3.6.4+ contains a security fix that is also a breaking change. See [upstream documentation](https://doc.traefik.io/traefik/v3.6/migrate/v3/#v364) for more details.
+  - PR [#1596](https://github.com/traefik/traefik-helm-chart/pull/1596) align kubernetesIngressNginx provider setting with upstream. There is a before / after example in the PR description
+- You can restore to the Traefik behavior of v3.6.3 or inferior (an example is shown on the upstream changelog), but this is not recommended, it may expose you to [GHSA-gm3x-23wp-hc2c](https://github.com/traefik/traefik/security/advisories/GHSA-gm3x-23wp-hc2c).
+
+#### [v39.0.0](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/Changelog.md#3900----)
+
+- There are 3 breaking changes in this release:
+  - Traefik Hub: This release support only Traefik Hub v3.19.0+ versions.
+    - CRDs has to be upgraded before the Chart. See [UPGRADING](https://github.com/traefik/traefik-helm-chart?tab=readme-ov-file#upgrading) instructions.
+    - It's possible to use previous versions of the Chart for previous versions of Traefik Hub.
+  - Encoded Characters: Allowed by default in Traefik v3.6.7+ ([opt-in security options](https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml#L913), [documentation](https://doc.traefik.io/traefik/security/request-path/#encoded-character-filtering))
+  - Ports Configuration: HTTP options now require explicit http nesting level with PR [#1603](https://github.com/traefik/traefik-helm-chart/pull/1603).
+- Schema validation has been enforced in this release. When it fails, it means that the parameter is not implemented.
+
+### Miscellaneous Chores
+
+* **chart:** upgrade Traefik chart to v39.0.0 ([#96](https://github.com/camptocamp/devops-stack-module-traefik/issues/96)) ([3173e0d](https://github.com/camptocamp/devops-stack-module-traefik/commit/3173e0d817026dec291f9ee059485adac19378bd))
+
 ## [10.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v9.0.2...v10.0.0) (2025-10-29)
 
 
