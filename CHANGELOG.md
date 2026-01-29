@@ -1,5 +1,16 @@
 # Changelog
 
+## [11.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v10.0.0...v11.0.0) (2026-01-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **chart:** upgrade Traefik chart to v39.0.0 ([#96](https://github.com/camptocamp/devops-stack-module-traefik/issues/96))
+
+### Miscellaneous Chores
+
+* **chart:** upgrade Traefik chart to v39.0.0 ([#96](https://github.com/camptocamp/devops-stack-module-traefik/issues/96)) ([3173e0d](https://github.com/camptocamp/devops-stack-module-traefik/commit/3173e0d817026dec291f9ee059485adac19378bd))
+
 ## [10.0.0](https://github.com/camptocamp/devops-stack-module-traefik/compare/v9.0.2...v10.0.0) (2025-10-29)
 
 
